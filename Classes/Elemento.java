@@ -1,32 +1,32 @@
-// Importando Random
-import java.util.Random;
-
-public class Elemento extends Criatura{
+public class Elemento{
     // Atributos
     private final String[] personagens = {"StoneDev","WaveNerd","BurnCoder","BreezeHacker"};
     private String personagem_escolhido;
-    private double fator;
+    private static int count;
 
     // Construtor
-    public Elemento(double fator) {
-        Random random = new Random();
-        this.personagem_escolhido = personagens[random.nextInt(0,3)];
-        this.fator = fator;
+    public Elemento() {
+        setPersonagem_escolhido();
+        count++;
+        if (count >= personagens.length){
+            count = 0;
+        }
     }
 
     // Getter's & Setter's
+    public String getPersonagem_escolhido() {
+        return this.personagem_escolhido;
+    }
+    public void setPersonagem_escolhido() {
+        this.personagem_escolhido = personagens[count];
+    }
+
 
     // to String
     @Override
     public String toString() {
         return "Elemento{" +
                 "personagem_escolhido='" + this.personagem_escolhido + '\'' +
-                ", fator=" +this.fator +
-                ", poder=" + getPoder() +
-                ", ataque=" + getAtaque() +
-                ", defesa=" + getDefesa() +
-                ", velocidade=" + getVelocidade() +
-                ", pontos_vida=" + getPontos_vida() +
                 '}';
     }
 }

@@ -1,16 +1,17 @@
 // Importando Random
 import java.util.Random;
 
-public class Criatura {
+public class Criatura extends Elemento {
     // Atributos
-    private int poder;
-    private int ataque;
-    private int defesa;
-    private int velocidade;
-    private int pontos_vida;
+    private final int poder;
+    private final int ataque;
+    private final int defesa;
+    private final int velocidade;
+    private final int pontos_vida;
 
     // Construtor
     public Criatura (){
+        super();
         Random random = new Random();
         this.poder = random.nextInt(10,30);
         this.ataque = random.nextInt(5,15);
@@ -22,27 +23,23 @@ public class Criatura {
     public int getPoder() {
         return this.poder;
     }
-
     public int getAtaque() {
         return this.ataque;
     }
-
     public int getDefesa() {
         return this.defesa;
     }
-
     public int getVelocidade() {
         return this.velocidade;
     }
-
     public int getPontos_vida() {
         return this.pontos_vida;
     }
     // toString()
-
     @Override
     public String toString() {
         return "Criatura{" +
+                "personagem_escolhido='" + getPersonagem_escolhido() + '\'' +
                 "poder=" + getPoder() +
                 ", ataque=" + getAtaque() +
                 ", defesa=" + getDefesa() +

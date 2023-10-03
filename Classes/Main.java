@@ -1,6 +1,8 @@
 public class Main {
     public static void main (String[] args){
-       MenuInicial menu = new MenuInicial();
-       menu.menuIniciar();
+       
+
+       Criatura criat = new Criatura();
+       System.out.println(criat);
     }
 }

@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Criatura {
+public class Criatura extends Elemento {
 
     private int poder;
     private int ataque;

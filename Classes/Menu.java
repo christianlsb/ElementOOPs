@@ -105,6 +105,6 @@ public class Menu {
 
 //Menu inicial: Iniciar o jogo | Sair do jogo - ok
 //Menu criaturas: Escolha criatura | Sair do  - ok 
-//Menu torneio: Iniciar o torneio | Sair do jogo
+//Menu torneio: Iniciar o torneio | Sair do jogo - ok
 //Menu batalha: Ataque fisico | Ataque elemental | Sair do jogo - ok
 //Menu vitorioso: Iniciar próxima batalha | Sair do jogo (Perder = sout(Você perdeu!))

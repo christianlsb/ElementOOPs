@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class MenuCriatura extends MenuInicial {
+public class MenuCriatura {
     
     private String elemento;
 
-    public void menuIniciar() {
+    public void menuA() {
         System.out.println("Bem vindo ao jogo de batalha de criaturas!");
         System.out.println("1. Iniciar | 2. Sair");
         Scanner scanner = new Scanner(System.in);
@@ -12,11 +12,11 @@ public class MenuCriatura extends MenuInicial {
         if (escolhaMenu == 1) {
             escolherCriatura();
         } else if (escolhaMenu == 2) {
-            menuConfirmarSaida();
+            System.out.println();
         } else {
             System.out.println("Entrada inválida!");
             System.out.println("Selecione novamente abaixo");
-            menuIniciar();
+            menuA();
         }
         scanner.close();
     }
@@ -43,24 +43,7 @@ public class MenuCriatura extends MenuInicial {
         }
         scanner.close();
     }
-
-    @Override
-    public void menuConfirmarSaida() {
-        System.out.println("Confirmar saída?");
-        System.out.println("1. Sim | 2. Não");
-        Scanner scanner = new Scanner(System.in);
-        int escolhaConfirma = scanner.nextInt();
-        if (escolhaConfirma == 1) {
-            System.out.println("Saindo do programa...");
-            System.exit(0);
-        } else if (escolhaConfirma == 2) {
-            menuIniciar();
-        } else {
-            System.out.println("Entrada inválida!");
-            System.out.println("Selecione novamente abaixo");
-            menuConfirmarSaida();
-        }
-        scanner.close();
-    }
 }
+
+
 

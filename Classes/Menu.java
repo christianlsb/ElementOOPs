@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Menu {
     // Atributos
     int numeroBatalha;
+    boolean proximaBatalha = true;
     Scanner scanner = new Scanner(System.in);
     
     // Métodos
@@ -76,6 +77,27 @@ public class Menu {
             menuAtacarBatalha();
         }
         return escolhaAtaque;
+    }
+
+    public void menuProximaBatalha(){
+        if(proximaBatalha = true){
+            System.out.println("Parabéns você ganhou, deseja continuar jogando?");
+         System.out.println("1. Continuar o jogo. | 2. Sair do jogo.");
+         int escolhaMenuInicial = scanner.nextInt();
+ 
+             if(escolhaMenuInicial ==  1){
+                 System.out.println("Continuando torneio...");
+                 // chamar o metodo de batalha
+             }else if(escolhaMenuInicial == 2){
+                 menuConfirmarSaida();
+             }else{
+                 System.out.println("Escolha inválida, tente novamente: ");
+             menuIniciar();
+             }
+         }else{
+             System.out.println("Você perdeu!");
+             //chamar metodo do menu iniciar jogo
+         }
     }
 
     public void menuConfirmarSaida(){

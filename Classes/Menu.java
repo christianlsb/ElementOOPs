@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Menu {
     // Atributos
-    int numeroBatalha;
+    private int numeroBatalha;
     Scanner scanner = new Scanner(System.in);
     
     // Métodos

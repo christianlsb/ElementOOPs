@@ -3,10 +3,11 @@ import java.util.Scanner;
 public class Menu {
     // Atributos
     private int numeroBatalha;
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
     
     // Métodos
     public void menuIniciar(){
+        scanner = new Scanner(System.in);
         System.out.println("Bem vindo ao ElementOOPs!");
         System.out.println("1. Iniciar o jogo! | 2. Sair do jogo.");
         int escolhaMenuInicial = scanner.nextInt();
@@ -18,10 +19,11 @@ public class Menu {
             System.out.println("Escolha inválida, tente novamente: ");
             menuIniciar();
         }    
+        scanner.close();
     }
 
     public int menuEscolherCriatura() {
-        
+        scanner = new Scanner(System.in);
         System.out.println("Escolha sua criatura: ");
         System.out.println("1. StoneDev (terra) | 2. WaveNerd (água) | 3. BurnCoder (fogo) | 4. BreezeHacker (ar) | 5. Sair do jogo");
         int escolhaCriatura = scanner.nextInt();
@@ -40,10 +42,12 @@ public class Menu {
             System.out.println("Escolha inválida, tente novamente: ");
             menuEscolherCriatura();
         }
+        scanner.close();
         return escolhaCriatura;
     }
 
     public void menuIniciarTorneio(){ 
+        scanner = new Scanner(System.in);
         System.out.println("Torneio!");
         System.out.println("1. Iniciar torneio! | 2. Sair do jogo.");
         int escolhaMenuTorneio = scanner.nextInt();
@@ -56,10 +60,12 @@ public class Menu {
             System.out.println("Escolha inválida, tente novamente: ");
             menuIniciarTorneio();
         }
+        scanner.close();
     }
 
     public int menuAtacarBatalha() {
         //Mostrar o número da batalha e qual o adversário da vez.
+        scanner = new Scanner(System.in);
         if(numeroBatalha < 1){
             System.out.println("Você está batalhando pela primeira vez.");
             System.out.println("Você é páreo? Descubra!");
@@ -75,10 +81,12 @@ public class Menu {
             System.out.println("Escolha inválida, tente novamente: ");
             menuAtacarBatalha();
         }
+        scanner.close();
         return escolhaAtaque;
     }
 
     public void menuConfirmarSaida(){
+        scanner = new Scanner(System.in);
         System.out.println("Confirmar saída?");
         System.out.println("1. Sim | 2. Não");
         int escolhaConfirma = scanner.nextInt();
@@ -99,10 +107,10 @@ public class Menu {
             System.out.println("Selecione novamente abaixo");
             menuConfirmarSaida();
         }
+        scanner.close();
     }
 }
 //Método sair do jogo: Validação de ação
-
 //Menu inicial: Iniciar o jogo | Sair do jogo - ok
 //Menu criaturas: Escolha criatura | Sair do  - ok 
 //Menu torneio: Iniciar o torneio | Sair do jogo - ok

@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Criatura extends Elemento {
+public abstract class Criatura {
 
     private int poder;
     private int ataque;
@@ -37,6 +37,8 @@ public class Criatura extends Elemento {
     public int getPontosVida() {
         return this.pontosVida;
     }
+
+    public abstract void atacarFisicamente();
 
     @Override
     public String toString() {

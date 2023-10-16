@@ -73,7 +73,6 @@ public class Menu {
         System.out.println("Como você quer atacar?");
         System.out.println("1. Ataque físico | 2. Ataque elemental | 3. Sair do jogo"); 
         int escolhaAtaque = scanner.nextInt();
-
         if(escolhaAtaque == 3){
             menuConfirmarSaida();
         //Else if: Se for diferente do intervalo entre 1 e 3:

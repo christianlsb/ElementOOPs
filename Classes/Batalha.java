@@ -1,14 +1,14 @@
 import java.util.Random;
 
 public class Batalha {
-
+    // Atributos
     private Criatura jogador;
     private Criatura computador;
     private Menu menu;
     private int turno;
-    private Random random;
     private int numJogador;
     private int numComputador;
+    private Random random;
 
     public Batalha(Criatura jogador, Criatura computador) {
         this.menu = new Menu();
@@ -20,23 +20,15 @@ public class Batalha {
         this.numJogador = random.nextInt();
     }
     public Criatura maiorVelocidade(){
-        System.out.println("O jogador com maior velocidade começa!");
-        System.out.printf("Sua velocidade: %d\n", jogador.getVelocidade());
-        System.out.printf("Velocidade do seu oponente: %d\n",computador.getVelocidade());
-        
+        int velJogador = jogador.getVelocidade();
+        int velComputador = computador.getVelocidade();
         //Se o jogador tiver maior velocidade, ele começa.
-        if(jogador.getVelocidade()>computador.getVelocidade()){
-            System.out.println("--------------");
-            System.out.println("Você começa!");
+        if(velJogador > velComputador){
             return jogador;
         //Se o computador tiver maior velocidade, ele começa.
-        }else if(jogador.getVelocidade()<computador.getVelocidade()){
-            System.out.println("--------------");
-            System.out.println("O oponente começa!");
+        }else if(velJogador < velComputador){
             return computador;
-        }else{
-            //Bloco de desempate de velocidade.
-            System.out.println("--------------");
+        }else{//Bloco de desempate de velocidade.
             System.out.println("Velocidade empatada, sorteando...");
             do{
                 if(numComputador>numJogador){
@@ -46,7 +38,29 @@ public class Batalha {
                     System.out.println("Você começa!");
                     return jogador;
                 }
-            }while(numComputador == numJogador);  
+            }while(numComputador == numJogador);
+        }
+    }
+    public Criatura menorVelocidade(){
+        int velJogador = jogador.getVelocidade();
+        int velComputador = computador.getVelocidade();
+        //Se o jogador tiver maior velocidade, ele começa.
+        if(velJogador < velComputador){
+            return jogador;
+            //Se o computador tiver maior velocidade, ele começa.
+        }else if(velJogador > velComputador){
+            return computador;
+        }else{//Bloco de desempate de velocidade.
+            System.out.println("Velocidade empatada, sorteando...");
+            do{
+                if(numComputador>numJogador){
+                    System.out.println("O oponente começa!");
+                    return computador;
+                }else{
+                    System.out.println("Você começa!");
+                    return jogador;
+                }
+            }while(numComputador == numJogador);
         }
     }
 
@@ -55,10 +69,12 @@ public class Batalha {
     }
 
     public void iniciarBatalha() {
-       
-        
+        Criatura primeiro = maiorVelocidade();
+        Criatura segundo = menorVelocidade();
+        System.out.printf("Velocidade do jogador: %d\n", jogador.getVelocidade());
+        System.out.printf("Velocidade do oponente: %d\n",computador.getVelocidade());
+        System.out.println("Combatente " + primeiro + " começa atacando!");
         do {
-
             if (computador.getPontosVida() <= 0) {
                 System.out.println("O computador foi derrotado!");
                 break;
@@ -67,6 +83,5 @@ public class Batalha {
                 break;
             }
         } while (jogador.getPontosVida() > 0 || computador.getPontosVida() > 0);
-
-    }
-}
+    } // Fim do método iniciarBatalha
+} // Fim da classe Batalha

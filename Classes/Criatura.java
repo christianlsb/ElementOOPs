@@ -7,7 +7,7 @@ public class Criatura extends Elemento {
     private int defesa;
     private int velocidade;
     private int pontosVida;
-    
+
     Random random = new Random();
 
     public Criatura(){
@@ -15,7 +15,7 @@ public class Criatura extends Elemento {
         this.ataque = random.nextInt(11) + 5;
         this.defesa = random.nextInt(11) + 5;
         this.velocidade = random.nextInt(10) + 1;
-        this.pontosVida = random.nextInt(201) + 200;
+        this.pontosVida = random.nextInt(99) + 100;
     }
 
     public int getPoder() {
@@ -38,12 +38,22 @@ public class Criatura extends Elemento {
         return this.pontosVida;
     }
 
+    public void setPontosVida(int pontosVida) {
+        this.pontosVida = pontosVida;
+    }
+
+    public void atacarFisicamente(Criatura alvo) {
+        int dano = this.poder * this.ataque / alvo.getDefesa();
+        int vidaAtual = alvo.getPontosVida() - dano;
+        alvo.pontosVida = vidaAtual;
+    }
+
     @Override
     public String toString() {
-        return "A sua criatura é: " + 
+        return "A sua criatura é: " + "getElemento()" +
         ", poder=" + getPoder() + ", ataque=" + getAtaque() +
         ", defesa=" + getDefesa() + ", velocidade=" + getVelocidade() + 
-        ", pontosVida=" + getPontosVida() +"]";
+        ", pontosVida=" + getPontosVida();
     }
 
 }

@@ -19,43 +19,26 @@ public class Batalha {
         this.numComputador = random.nextInt();
         this.numJogador = random.nextInt();
     }
-    public Criatura maiorVelocidade(){
-        System.out.println("O jogador com maior velocidade começa!");
-        System.out.printf("Sua velocidade: %d\n", jogador.getVelocidade());
-        System.out.printf("Velocidade do seu oponente: %d\n",computador.getVelocidade());
-        
-        //Se o jogador tiver maior velocidade, ele começa.
-        if(jogador.getVelocidade()>computador.getVelocidade()){
-            System.out.println("--------------");
-            System.out.println("Você começa!");
-            return jogador;
-        //Se o computador tiver maior velocidade, ele começa.
-        }else if(jogador.getVelocidade()<computador.getVelocidade()){
-            System.out.println("--------------");
-            System.out.println("O oponente começa!");
-            return computador;
-        }else{
-            //Bloco de desempate de velocidade.
-            System.out.println("--------------");
-            System.out.println("Velocidade empatada, sorteando...");
-            do{
-                if(numComputador>numJogador){
-                    System.out.println("O oponente começa!");
-                    return computador;
-                }else{
-                    System.out.println("Você começa!");
-                    return jogador;
-                }
-            }while(numComputador == numJogador);  
-        }
-    }
 
     public void trocarTurno() {
         this.turno += 1;
     }
 
     public void iniciarBatalha() {
-       
+        menu.menuMaiorVelocidade(jogador, computador);
+
+        Criatura primeiroJogador;
+        Criatura segundoJogador;
+
+        if(jogador.getVelocidade() >= computador.getVelocidade()){
+            System.out.println("Você começa!");
+            primeiroJogador = jogador;
+            segundoJogador = computador;
+        }else{
+            primeiroJogador = computador;
+            segundoJogador = jogador;
+        }
+        
         
         do {
 

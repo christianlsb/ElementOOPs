@@ -1,10 +1,23 @@
 public class Main {
     public static void main (String[] args){
        
-        Menu menuzin = new Menu();
-        menuzin.menuIniciar();
-       
-        Criatura criat = new Criatura();
-        System.out.println(criat);
+        Menu menu = new Menu();
+        Criatura jogador;
+        Criatura computador;
+        int criaturaEscolhida;
+        //criaturas
+        menu.menuIniciar();
+        criaturaEscolhida = menu.menuEscolherCriatura();
+        //for(int i =0; criatura.size(); i++){
+            //if{criatura!=criaturaEscolhida}
+        //}
+        //
+        menu.menuIniciarTorneio();
+
+
+
+
+
+
     }
 }

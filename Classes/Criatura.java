@@ -45,7 +45,7 @@ public class Criatura extends Elemento {
     public void atacarFisicamente(Criatura alvo) {
         int dano = this.poder * this.ataque / alvo.getDefesa();
         int vidaAtual = alvo.getPontosVida() - dano;
-        alvo.pontosVida = vidaAtual;
+        alvo.setPontosVida(vidaAtual);
     }
 
     @Override

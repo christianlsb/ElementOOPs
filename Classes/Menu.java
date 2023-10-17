@@ -4,10 +4,13 @@ public class Menu {
     // Atributos
     private int numeroBatalha;
     private Scanner scanner;
+
+    public Menu(){
+        this.scanner = new Scanner(System.in);
+    }
     
     // Métodos
     public void menuIniciar(){
-        scanner = new Scanner(System.in);
         System.out.println("Bem vindo ao ElementOOPs!");
         System.out.println("1. Iniciar o jogo! | 2. Sair do jogo.");
         int escolhaMenuInicial = scanner.nextInt();
@@ -19,11 +22,10 @@ public class Menu {
             System.out.println("Escolha inválida, tente novamente: ");
             menuIniciar();
         }    
-        scanner.close();
+        
     }
 
     public int menuEscolherCriatura() {
-        scanner = new Scanner(System.in);
         System.out.println("Escolha sua criatura: ");
         System.out.println("1. StoneDev (terra) | 2. WaveNerd (água) | 3. BurnCoder (fogo) | 4. BreezeHacker (ar) | 5. Sair do jogo");
         int escolhaCriatura = scanner.nextInt();
@@ -42,7 +44,6 @@ public class Menu {
             System.out.println("Escolha inválida, tente novamente: ");
             menuEscolherCriatura();
         }
-        scanner.close();
         return escolhaCriatura;
     }
 
@@ -108,6 +109,12 @@ public class Menu {
             menuConfirmarSaida();
         }
         scanner.close();
+    }
+
+    public void menuMaiorVelocidade(Criatura jogador, Criatura computador){
+        System.out.println("O jogador com maior velocidade começa!");
+        System.out.printf("Sua velocidade: %d\n", jogador.getVelocidade());
+        System.out.printf("Velocidade do seu oponente: %d\n",computador.getVelocidade());
     }
 }
 //Método sair do jogo: Validação de ação

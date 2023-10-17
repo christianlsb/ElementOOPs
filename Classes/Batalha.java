@@ -19,53 +19,6 @@ public class Batalha {
         this.numComputador = random.nextInt();
         this.numJogador = random.nextInt();
     }
-<<<<<<< HEAD
-=======
-    public Criatura maiorVelocidade(){
-        int velJogador = jogador.getVelocidade();
-        int velComputador = computador.getVelocidade();
-        //Se o jogador tiver maior velocidade, ele começa.
-        if(velJogador > velComputador){
-            return jogador;
-        //Se o computador tiver maior velocidade, ele começa.
-        }else if(velJogador < velComputador){
-            return computador;
-        }else{//Bloco de desempate de velocidade.
-            System.out.println("Velocidade empatada, sorteando...");
-            do{
-                if(numComputador>numJogador){
-                    System.out.println("O oponente começa!");
-                    return computador;
-                }else{
-                    System.out.println("Você começa!");
-                    return jogador;
-                }
-            }while(numComputador == numJogador);
-        }
-    }
-    public Criatura menorVelocidade(){
-        int velJogador = jogador.getVelocidade();
-        int velComputador = computador.getVelocidade();
-        //Se o jogador tiver maior velocidade, ele começa.
-        if(velJogador < velComputador){
-            return jogador;
-            //Se o computador tiver maior velocidade, ele começa.
-        }else if(velJogador > velComputador){
-            return computador;
-        }else{//Bloco de desempate de velocidade.
-            System.out.println("Velocidade empatada, sorteando...");
-            do{
-                if(numComputador>numJogador){
-                    System.out.println("O oponente começa!");
-                    return computador;
-                }else{
-                    System.out.println("Você começa!");
-                    return jogador;
-                }
-            }while(numComputador == numJogador);
-        }
-    }
->>>>>>> claudio
 
     public void trocarTurno() {
         this.turno += 1;

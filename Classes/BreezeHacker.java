@@ -4,7 +4,11 @@ public class BreezeHacker extends Ar{
     // Métodos
     @Override
     public void atacarElementalmente() {
-
+        System.out.println("BreezeHacker atacando elementalmente!");
+    }
+    @Override
+    public void atacarFisicamente() {
+        System.out.println("BreezeHacker atacando fisicamente!");
     }
     // toString()
     @Override

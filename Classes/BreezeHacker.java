@@ -1,4 +1,4 @@
-public class BreezeHacker extends Ar{
+public class BreezeHacker extends Criatura{
 
     //
     // Métodos

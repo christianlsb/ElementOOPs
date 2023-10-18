@@ -1,4 +1,4 @@
-public class WaveNerd extends Agua {
+public class WaveNerd extends Criatura {
   @Override
   public void atacarElementalmente(){};
   @Override

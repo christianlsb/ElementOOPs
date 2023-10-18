@@ -16,7 +16,7 @@ public abstract class Criatura {
         this.defesa = random.nextInt(11) + 5;
         this.velocidade = random.nextInt(10) + 1;
         this.pontosVida = random.nextInt(99) + 100;
-        this.nome = nome;
+        this.nome = "Não definida";
     }
     // GETTER'S & SETTER'S
     public int getPoder() {
@@ -44,9 +44,7 @@ public abstract class Criatura {
         this.nome = nome;
     }
     // Métodos
-    public void atacarFisicamente(Criatura alvo){
-        int dano = this.poder * this.ataque / alvo.getDefesa();
-        int vidaAtual = alvo.getPontosVida() - dano;
-        alvo.setPontosVida(vidaAtual);
-    }
+    public abstract void atacarFisicamente();
+    public abstract void atacarElementalmente();
+
 }

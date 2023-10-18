@@ -1,4 +1,4 @@
-public class BurnCoder extends Fogo{
+public class BurnCoder extends Criatura{
     // Métodos
     @Override
     public void atacarElementalmente() {

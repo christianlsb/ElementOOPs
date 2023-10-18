@@ -7,6 +7,7 @@ public abstract class Criatura {
     private int defesa;
     private int velocidade;
     private int pontosVida;
+    private String nome;
     Random random = new Random();
     // Construtor
     public Criatura(){
@@ -15,6 +16,7 @@ public abstract class Criatura {
         this.defesa = random.nextInt(11) + 5;
         this.velocidade = random.nextInt(10) + 1;
         this.pontosVida = random.nextInt(99) + 100;
+        this.nome = nome;
     }
     // GETTER'S & SETTER'S
     public int getPoder() {
@@ -32,9 +34,14 @@ public abstract class Criatura {
     public int getPontosVida() {
         return this.pontosVida;
     }
-
     public void setPontosVida(int pontosVida) {
         this.pontosVida = pontosVida;
+    }
+    public String getNome() {
+        return this.nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
     }
     // Métodos
     public void atacarFisicamente(Criatura alvo){

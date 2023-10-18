@@ -1,5 +1,5 @@
 public class BreezeHacker extends Ar{
-    private String nome;
+
     //
     // Métodos
     @Override

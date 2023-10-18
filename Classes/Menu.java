@@ -48,7 +48,6 @@ public class Menu {
     }
 
     public void menuIniciarTorneio(){ 
-        scanner = new Scanner(System.in);
         System.out.println("Torneio!");
         System.out.println("1. Iniciar torneio! | 2. Sair do jogo.");
         int escolhaMenuTorneio = scanner.nextInt();
@@ -61,12 +60,12 @@ public class Menu {
             System.out.println("Escolha inválida, tente novamente: ");
             menuIniciarTorneio();
         }
-        scanner.close();
+       
     }
 
     public int menuAtacarBatalha() {
         //Mostrar o número da batalha e qual o adversário da vez.
-        scanner = new Scanner(System.in);
+        
         if(numeroBatalha < 1){
             System.out.println("Você está batalhando pela primeira vez.");
             System.out.println("Você é páreo? Descubra!");
@@ -81,12 +80,12 @@ public class Menu {
             System.out.println("Escolha inválida, tente novamente: ");
             menuAtacarBatalha();
         }
-        scanner.close();
+        
         return escolhaAtaque;
     }
 
     public void menuConfirmarSaida(){
-        scanner = new Scanner(System.in);
+        
         System.out.println("Confirmar saída?");
         System.out.println("1. Sim | 2. Não");
         int escolhaConfirma = scanner.nextInt();
@@ -107,7 +106,7 @@ public class Menu {
             System.out.println("Selecione novamente abaixo");
             menuConfirmarSaida();
         }
-        scanner.close();
+        
     }
 
     public void menuMaiorVelocidade(Criatura jogador, Criatura computador){

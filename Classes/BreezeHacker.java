@@ -18,4 +18,5 @@ public class BreezeHacker extends Criatura{
                 ", defesa=" + getDefesa() + ", velocidade=" + getVelocidade() +
                 ", pontosVida=" + getPontosVida();
     }
+    //sobrescrever o equals em cada subclasse.
 } // Fim da classe BreezeHacker

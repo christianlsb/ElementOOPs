@@ -23,7 +23,7 @@ public class Torneio {
         }
     }
 
-    public void escolherInimigo(Criatura jogador){
+    public void separarInimigos(Criatura jogador){
         Criatura stoneDev = new StoneDev();
         Criatura waveNerd = new WaveNerd();
         Criatura burnCoder = new BurnCoder();
@@ -41,24 +41,5 @@ public class Torneio {
         if(jogador != breezeHacker){
             criaturasInimigas.add(breezeHacker);
         }
-    }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-
-        if (o == null) {
-            return false;
-        }
-
-        if (o.getClass().equals(Criatura.class)) {
-            Criatura outro = (Criatura) o;
-            if (getPlaca().equals(outro.getPlaca())) {
-                return true;
-            }
-        }
-        
-        return false;
     }
 }

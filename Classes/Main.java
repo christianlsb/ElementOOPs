@@ -15,7 +15,7 @@ public class Main {
         jogador = torneio.definirCriatura(criaturaEscolhida);
         //Inicia o torneio.
         menu.menuIniciarTorneio();
-        torneio.escolherInimigo(jogador);
+        torneio.separarInimigos(jogador);
 
 
 

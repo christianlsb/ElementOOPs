@@ -29,7 +29,7 @@ public class Torneio {
         Criatura burnCoder = new BurnCoder();
         Criatura breezeHacker = new BreezeHacker();
 
-        if(jogador != stoneDev){
+        if(!(jogador.getNome().equals(stoneDev.getNome()))){
             criaturasInimigas.add(stoneDev);
         }
         if(jogador != waveNerd){

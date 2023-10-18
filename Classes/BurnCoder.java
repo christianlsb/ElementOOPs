@@ -1,6 +1,7 @@
 public class BurnCoder extends Criatura{
-    public BurnCoder(String nome) {
-        setNome("BurnCoder");
+
+    public BurnCoder() {
+        this.setNome("BurnCoder");
     }
     
     // Métodos

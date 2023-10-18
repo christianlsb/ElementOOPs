@@ -44,7 +44,7 @@ public abstract class Criatura {
         this.nome = nome;
     }
     // Métodos
-    public abstract void atacarFisicamente();
+    public abstract void atacarFisicamente(Criatura alvo);
     public abstract void atacarElementalmente();
 
 }

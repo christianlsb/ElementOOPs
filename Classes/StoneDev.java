@@ -1,16 +1,16 @@
 public class StoneDev extends Criatura {
-    public StoneDev(String nome, int poder, int ataque, int defesa, int velocidade, int pontosVida){
-        super(String nome, poder,  ataque,  defesa,  velocidade,  pontosVida);
-
+    public StoneDev(String nome) {
         setNome("StoneDev");
     }
+
+
   @Override
   public void atacarElementalmente() {
       System.out.println("StoneDev atacando elementalmente!");
   }
   @Override
   public void atacarFisicamente(Criatura alvo){
-    int dano = this.poder * this.ataque / alvo.getDefesa();
+    int dano = getPoder() * getAtaque() / alvo.getDefesa();
     int vidaAtual = alvo.getPontosVida() - dano;
     alvo.setPontosVida(vidaAtual);
 }

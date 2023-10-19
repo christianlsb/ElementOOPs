@@ -1,8 +1,8 @@
 public class StoneDev extends Criatura {
-    public StoneDev(String nome) {
-        setNome("StoneDev");
+  
+    public StoneDev() {
+        this.setNome("StoneDev");
     }
-
 
   @Override
   public void atacarElementalmente() {

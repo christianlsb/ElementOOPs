@@ -62,14 +62,17 @@ public class Menu {
         }
        
     }
-
+    public void menuBatalhar(int turno){
+        if(turno == 1){
+            System.out.println("Ora ora, vejo que você é novo por aqui...");
+            System.out.println("Você é pareo?");
+        }else{
+            System.out.println("Bem vindo ao campo de batalha!");
+            System.out.println("Sobreviva, se for capaz... MUAHAHAHA");
+        }
+    }
     public int menuAtacarBatalha() {
-        //Mostrar o número da batalha e qual o adversário da vez.
         
-        if(numeroBatalha < 1){
-            System.out.println("Você está batalhando pela primeira vez.");
-            System.out.println("Você é páreo? Descubra!");
-        } 
         System.out.println("Como você quer atacar?");
         System.out.println("1. Ataque físico | 2. Ataque elemental | 3. Sair do jogo"); 
         int escolhaAtaque = scanner.nextInt();

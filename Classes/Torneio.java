@@ -23,23 +23,24 @@ public class Torneio {
         }
     }
 
-    public void separarInimigos(Criatura jogador){
-        Criatura stoneDev = new StoneDev();
-        Criatura waveNerd = new WaveNerd();
+    public ArrayList<Criatura> separarInimigos(Criatura jogador){
         Criatura burnCoder = new BurnCoder();
         Criatura breezeHacker = new BreezeHacker();
+        Criatura stoneDev = new StoneDev();
+        Criatura waveNerd = new WaveNerd();
 
+        if(!(jogador.getNome().equals(burnCoder.getNome()))){
+            criaturasInimigas.add(burnCoder);
+        }
+        if(!(jogador.getNome().equals(breezeHacker.getNome()))){
+            criaturasInimigas.add(breezeHacker);
+        }
         if(!(jogador.getNome().equals(stoneDev.getNome()))){
             criaturasInimigas.add(stoneDev);
         }
-        if(jogador != waveNerd){
+        if(!(jogador.getNome().equals(waveNerd.getNome()))){
             criaturasInimigas.add(waveNerd);
         }
-        if(jogador != burnCoder){
-            criaturasInimigas.add(burnCoder);
-        }
-        if(jogador != breezeHacker){
-            criaturasInimigas.add(breezeHacker);
-        }
+        return criaturasInimigas;
     }
 }

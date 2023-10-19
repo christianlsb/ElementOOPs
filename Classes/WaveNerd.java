@@ -1,7 +1,7 @@
 public class WaveNerd extends Criatura {
 
-  public WaveNerd(String nome) {
-      setNome("WaveNerd");
+  public WaveNerd() {
+    this.setNome("WaveNerd");
   }
 
   @Override

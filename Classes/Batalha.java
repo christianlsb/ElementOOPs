@@ -15,13 +15,8 @@ public class Batalha {
         this.random = new Random();
         this.jogador = jogador;
         this.computador = computador;
-        this.turno = 0;
         this.numComputador = random.nextInt();
         this.numJogador = random.nextInt();
-    }
-
-    public void trocarTurno() {
-        this.turno += 1;
     }
 
     public void iniciarBatalha() {

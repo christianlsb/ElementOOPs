@@ -1,6 +1,6 @@
 public class BreezeHacker extends Criatura{
-    public BreezeHacker(String nome) {
-        setNome("BreezeHacker");
+    public BreezeHacker() {
+        this.setNome("BreezeHacker");
     }
     
     // Métodos
@@ -17,7 +17,7 @@ public class BreezeHacker extends Criatura{
     // toString()
     @Override
     public String toString() {
-        return  getNome() +
+        return getNome() +
                 "poder=" + getPoder() + ", ataque=" + getAtaque() +
                 ", defesa=" + getDefesa() + ", velocidade=" + getVelocidade() +
                 ", pontosVida=" + getPontosVida();

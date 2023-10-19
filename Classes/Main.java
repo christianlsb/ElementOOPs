@@ -1,12 +1,15 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main (String[] args){
        
         Menu menu = new Menu();
         Torneio torneio = new Torneio();
-
+        Batalha batalha;
+        ArrayList<Criatura> criaturasInimigas = new ArrayList<>();
         Criatura jogador;
-        Criatura computador;
         int criaturaEscolhida;
+        int turno = 1;
 
         //Exibe menu inicial.
         menu.menuIniciar();
@@ -15,7 +18,18 @@ public class Main {
         jogador = torneio.definirCriatura(criaturaEscolhida);
         //Inicia o torneio.
         menu.menuIniciarTorneio();
-        torneio.separarInimigos(jogador);
+        criaturasInimigas = torneio.separarInimigos(jogador);
+        System.out.println(jogador);
+
+
+        for(Criatura criaturaInimiga:criaturasInimigas){
+            batalha = new Batalha(jogador, criaturaInimiga);
+            System.out.println(criaturaInimiga);
+            menu.menuBatalhar(turno);
+            System.out.println("-----------------");
+            turno++;
+        }
+
 
 
 

@@ -56,10 +56,9 @@ public class Batalha {
                     break;
                 }else if(jogador.getPontosVida() <= 0){
                     System.out.println("Você foi derrotado.\nSeus pontos de vida chegaram a 0.");
+                    System.exit(0);
                     break;
-                }else{
-                    break;
-            }
+                }
             }while (jogador.getPontosVida() > 0 || criaturaInimiga.getPontosVida() > 0);
         } 
     } // Fim do método iniciarBatalha

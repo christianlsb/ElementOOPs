@@ -45,8 +45,7 @@ public abstract class Criatura {
     }
     // Métodos
     public abstract void atacarFisicamente(Criatura alvo);
-    public abstract void atacarElementalmente();
-    
+    public abstract void atacarElementalmente(Criatura alvo);
     @Override
     public String toString() {
         return getNome() +

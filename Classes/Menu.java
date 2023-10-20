@@ -66,9 +66,13 @@ public class Menu {
         if(turno == 1){
             System.out.println("Ora ora, vejo que você é novo por aqui...");
             System.out.println("Você é pareo?");
-        }else{
-            System.out.println("Bem vindo ao campo de batalha!");
+        }else if(turno == 2) {
+            System.out.println("Hum, então você ganhou a primeira batalha?");
             System.out.println("Sobreviva, se for capaz... MUAHAHAHA");
+        }else{
+           System.out.println("Você chegou na arena final!"); 
+           System.out.println("Você nunca me derrotará. NUNCA!");
+
         }
     }
     public int menuAtacarBatalha() {

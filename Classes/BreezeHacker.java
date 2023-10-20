@@ -5,8 +5,8 @@ public class BreezeHacker extends Criatura{
     
     // Métodos
     @Override
-    public void atacarElementalmente() {
-        System.out.println("BreezeHacker atacando elementalmente!");
+    public void atacarElementalmente(Criatura alvo) {
+        System.out.println("O ar é meu aliado, e você é minha presa");
     }
     @Override
     public void atacarFisicamente(Criatura alvo){

@@ -6,8 +6,8 @@ public class BurnCoder extends Criatura{
     
     // Métodos
     @Override
-    public void atacarElementalmente() {
-        System.out.println("BurnCoder atacando elementalmente!");
+    public void atacarElementalmente(Criatura alvo) {
+        System.out.println("Você tem ideia do quão quente é o bafo de fogo?");
     }
     @Override
     public void atacarFisicamente(Criatura alvo){

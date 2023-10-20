@@ -5,7 +5,9 @@ public class WaveNerd extends Criatura {
   }
 
   @Override
-  public void atacarElementalmente(){};
+  public void atacarElementalmente(Criatura alvo){
+    System.out.println("Estas águas são traiçoeiras!");
+  };
   @Override
   public void atacarFisicamente(Criatura alvo){
     int dano = getPoder() * getAtaque() / alvo.getDefesa();

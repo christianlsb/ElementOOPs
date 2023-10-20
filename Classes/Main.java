@@ -21,12 +21,11 @@ public class Main {
         criaturasInimigas = torneio.separarInimigos(jogador);
         System.out.println(jogador);
 
-
         for(Criatura criaturaInimiga:criaturasInimigas){
+
             batalha = new Batalha(jogador, criaturaInimiga);
-            System.out.println(criaturaInimiga);
             menu.menuBatalhar(turno);
-            System.out.println("-----------------");
+            batalha.iniciarBatalha(jogador,criaturaInimiga);
             turno++;
         }
 

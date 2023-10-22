@@ -8,6 +8,7 @@ public abstract class Criatura {
     private int velocidade;
     private int pontosVida;
     private String nome;
+    private double[] fator;
     Random random = new Random();
     // Construtor
     public Criatura(){
@@ -16,6 +17,7 @@ public abstract class Criatura {
         this.defesa = random.nextInt(11) + 5;
         this.velocidade = random.nextInt(10) + 1;
         this.pontosVida = random.nextInt(99) + 100;
+        this.fator = new double[3];
         this.nome = "Não definida";
     }
     // GETTER'S & SETTER'S
@@ -42,6 +44,13 @@ public abstract class Criatura {
     }
     public void setNome(String nome) {
         this.nome = nome;
+    }
+    public double[] getFator() {
+        return this.fator;
+    }
+
+    public void setFator(double[] fator) {
+        this.fator = fator;
     }
     // Métodos
     public abstract void atacarFisicamente(Criatura alvo);

@@ -64,6 +64,39 @@ public class Batalha {
                     break;
                 }
             }while (jogador.getPontosVida() > 0 || criaturaInimiga.getPontosVida() > 0);
-        } 
+        } else {
+            System.out.println("A criatura inimiga começa!");
+            do{
+                System.out.println(jogador);
+                System.out.println(criaturaInimiga);
+                int escolhaAtaqueCriatura = random.nextInt(1) + 1;
+                if(escolhaAtaqueCriatura == 1){
+                    criaturaInimiga.atacarFisicamente(jogador);
+                    System.out.println(jogador);
+                    System.out.println(criaturaInimiga);
+                }else if(escolhaAtaqueCriatura == 2){
+                    criaturaInimiga.atacarElementalmente(jogador);
+                }
+                int escolhaAtaque = menu.menuAtacarBatalha();
+                if(escolhaAtaque == 1){
+                    jogador.atacarFisicamente(criaturaInimiga);
+                    System.out.println(jogador);
+                    System.out.println(criaturaInimiga);
+                }else if(escolhaAtaque == 2){
+                    jogador.atacarElementalmente(criaturaInimiga);
+                }
+                //------------------------------------------------------------
+                if (criaturaInimiga.getPontosVida() <= 0) {
+                    System.out.println("A criatura inimiga foi derrotada!");
+                    jogador.setPontosVida(vidaInicial);
+                    System.out.println("Vida do jogador: " + jogador.getPontosVida());
+                    break;
+                }else if(jogador.getPontosVida() <= 0){
+                    System.out.println("Você foi derrotado.\nSeus pontos de vida chegaram a 0.");
+                    System.exit(0);
+                    break;
+                }
+            }while (jogador.getPontosVida() > 0 || criaturaInimiga.getPontosVida() > 0);
+        }
     } // Fim do método iniciarBatalha
 } // Fim da classe Batalha

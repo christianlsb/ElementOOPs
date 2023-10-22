@@ -28,6 +28,7 @@ public class Batalha {
     }
     public void iniciarBatalha(Criatura jogador, Criatura criaturaInimiga) {
         menu.menuMaiorVelocidade(jogador, criaturaInimiga);
+        int vidaInicial = jogador.getPontosVida();
 
         if(jogador.getVelocidade() >= criaturaInimiga.getVelocidade()){
             System.out.println("Você começa!");
@@ -35,6 +36,7 @@ public class Batalha {
                 System.out.println(jogador);
                 System.out.println(criaturaInimiga);
                 int escolhaAtaque = menu.menuAtacarBatalha();
+                System.out.println("Vida inicial: " + vidaInicial);
                 if(escolhaAtaque == 1){
                     jogador.atacarFisicamente(criaturaInimiga);
                     System.out.println(jogador);
@@ -53,6 +55,8 @@ public class Batalha {
                 //------------------------------------------------------------
                 if (criaturaInimiga.getPontosVida() <= 0) {
                     System.out.println("A criatura inimiga foi derrotada!");
+                    jogador.setPontosVida(vidaInicial);
+                    System.out.println("Vida do jogador: " + jogador.getPontosVida());
                     break;
                 }else if(jogador.getPontosVida() <= 0){
                     System.out.println("Você foi derrotado.\nSeus pontos de vida chegaram a 0.");

@@ -31,8 +31,8 @@ public class Main {
             contadorBatalha++;
            if (contadorBatalha == 3){
             System.out.println("Parabéns, você venceu o torneio!");
-            System.exit(0);
-        }
+            menu.menuIniciar();
+        } 
         
     }
   }

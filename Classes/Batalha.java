@@ -39,18 +39,34 @@ public class Batalha {
                 System.out.println("Vida inicial: " + vidaInicial);
                 if(escolhaAtaque == 1){
                     jogador.atacarFisicamente(criaturaInimiga);
+                    System.out.println("-------------------------------------------\n");
+                    System.out.println("O inimigo usou o Ataque Físico");
                     System.out.println(jogador);
                     System.out.println(criaturaInimiga);
+                    System.out.println("-------------------------------------------\n");
                 }else if(escolhaAtaque == 2){
                     jogador.atacarElementalmente(criaturaInimiga);
+                    System.out.println("-------------------------------------------\n");
+                    System.out.println("O inimigo usou o Ataque Elemental");
+                    System.out.println(jogador);
+                    System.out.println(criaturaInimiga);
+                    System.out.println("-------------------------------------------\n");
                 }
                 int escolhaAtaqueCriatura = random.nextInt(1) + 1;
                 if(escolhaAtaqueCriatura == 1){
                     criaturaInimiga.atacarFisicamente(jogador);
+                    System.out.println("-------------------------------------------\n");
+                    System.out.println("O inimigo usou o Ataque Físico");
                     System.out.println(jogador);
                     System.out.println(criaturaInimiga);
+                    System.out.println("-------------------------------------------\n");
                 }else if(escolhaAtaqueCriatura == 2){
                     criaturaInimiga.atacarElementalmente(jogador);
+                    System.out.println("-------------------------------------------\n");
+                    System.out.println("O inimigo usou o Ataque Elemental");
+                    System.out.println(jogador);
+                    System.out.println(criaturaInimiga);
+                    System.out.println("-------------------------------------------\n");
                 }
                 //------------------------------------------------------------
                 if (criaturaInimiga.getPontosVida() <= 0) {
@@ -72,10 +88,18 @@ public class Batalha {
                 int escolhaAtaqueCriatura = random.nextInt(1) + 1;
                 if(escolhaAtaqueCriatura == 1){
                     criaturaInimiga.atacarFisicamente(jogador);
+                    System.out.println("-------------------------------------------\n");
+                    System.out.println("O inimigo usou o Ataque Físico");
                     System.out.println(jogador);
                     System.out.println(criaturaInimiga);
+                    System.out.println("-------------------------------------------\n");
                 }else if(escolhaAtaqueCriatura == 2){
                     criaturaInimiga.atacarElementalmente(jogador);
+                    System.out.println("-------------------------------------------\n");
+                    System.out.println("O inimigo usou o Ataque Elemental");
+                    System.out.println(jogador);
+                    System.out.println(criaturaInimiga);
+                    System.out.println("-------------------------------------------\n");
                 }
                 int escolhaAtaque = menu.menuAtacarBatalha();
                 if(escolhaAtaque == 1){

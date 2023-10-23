@@ -47,9 +47,16 @@ public class BurnCoder extends Criatura{
     // toString()
     @Override
     public String toString() {
-        return getNome() +
-                "poder=" + getPoder() + ", ataque=" + getAtaque() +
-                ", defesa=" + getDefesa() + ", velocidade=" + getVelocidade() +
-                ", pontosVida=" + getPontosVida();
+        return "-----------------BurnCoder------------------\n" +
+        "|Poder: " + getPoder() + "|\n" +
+        "-------------------------------------------\n" +
+        "|Ataque: " + getAtaque() + "|\n" +
+        "-------------------------------------------\n" +
+        "|Defesa: " + getDefesa() + "|\n" + 
+        "-------------------------------------------\n" +
+        "|Velocidade: " + getVelocidade() + "|\n" + 
+        "-------------------------------------------\n" +
+        "|Pontos de Vida: " + getPontosVida() + "|\n" + 
+        "-------------------------------------------\n";
     }
 }// Fim da classe BurnCoder

@@ -10,6 +10,7 @@ public class Main {
         Criatura jogador;
         int criaturaEscolhida;
         int turno = 1;
+        int contadorBatalha = 0;
 
         //Exibe menu inicial.
         menu.menuIniciar();
@@ -27,13 +28,12 @@ public class Main {
             menu.menuBatalhar(turno);
             batalha.iniciarBatalha(jogador,criaturaInimiga);
             turno++;
+            contadorBatalha++;
+           if (contadorBatalha == 3){
+            System.out.println("Parabéns, você venceu o torneio!");
+            System.exit(0);
         }
-
-
-
-
-
-
-
+        
     }
+  }
 }

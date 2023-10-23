@@ -40,14 +40,14 @@ public class Batalha {
                 if(escolhaAtaque == 1){
                     jogador.atacarFisicamente(criaturaInimiga);
                     System.out.println("-------------------------------------------\n");
-                    System.out.println("O inimigo usou o Ataque Físico");
+                    System.out.printf("Você atacou fisicamente o %s\n",criaturaInimiga.getNome());
                     System.out.println(jogador);
                     System.out.println(criaturaInimiga);
                     System.out.println("-------------------------------------------\n");
                 }else if(escolhaAtaque == 2){
                     jogador.atacarElementalmente(criaturaInimiga);
                     System.out.println("-------------------------------------------\n");
-                    System.out.println("O inimigo usou o Ataque Elemental");
+                    System.out.printf("Você atacou elementalmente o %s\n",criaturaInimiga.getNome());
                     System.out.println(jogador);
                     System.out.println(criaturaInimiga);
                     System.out.println("-------------------------------------------\n");

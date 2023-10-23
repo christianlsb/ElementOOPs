@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class Torneio {
 
-    private Batalha[] batalhas = new Batalha[3];
     private ArrayList<Criatura> criaturasInimigas = new ArrayList<>();
     
     //O torneio consiste de três batalhas, uma contra cada 

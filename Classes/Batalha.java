@@ -2,28 +2,45 @@ import java.util.Random;
 
 public class Batalha {
     // Atributos
-    private Criatura jogador;
-    private Criatura criaturaInimiga;
+    
     private Menu menu;
-    private int turno;
-    private int numJogador;
-    private int numcriaturaInimiga;
     private Random random;
 
     public Batalha(Criatura jogador, Criatura criaturaInimiga) {
         this.menu = new Menu();
-        this.random = new Random();
-        this.jogador = jogador;
-        this.criaturaInimiga = criaturaInimiga;
-        this.numcriaturaInimiga = random.nextInt();
-        this.numJogador = random.nextInt();
+        this.random = new Random();    
     }
-    public void atacar(Criatura jogador, Criatura criaturaInimigo){
-        int escolhaAtaque = menu.menuAtacarBatalha();
+
+    public void atacarInimigo(Criatura jogador, Criatura criaturaInimiga){
+        int escolhaAtaque = menu.menuAtacarBatalha(criaturaInimiga);
         if(escolhaAtaque == 1){
-            jogador.atacarFisicamente(criaturaInimigo);
-        }else{
-            jogador.atacarElementalmente(criaturaInimigo);
+            System.out.println("-------------------------------------------");
+            System.out.printf("Você atacou fisicamente o %s\n",criaturaInimiga.getNome());
+            jogador.atacarFisicamente(criaturaInimiga);
+            System.out.printf("A vida da criatura agora é: %d",criaturaInimiga.getPontosVida());
+            System.out.println("\n-------------------------------------------\n");
+        }else if(escolhaAtaque == 2){
+            System.out.println("-------------------------------------------");
+            System.out.printf("Você atacou elementalmente o %s\n",criaturaInimiga.getNome());
+            jogador.atacarElementalmente(criaturaInimiga);
+            System.out.printf("A vida da criatura agora é: %d", criaturaInimiga.getPontosVida());
+            System.out.println("\n-------------------------------------------\n");
+        }
+    }
+    public void atacarJogador(Criatura jogador, Criatura criaturaInimiga){
+        int escolhaAtaqueCriatura = random.nextInt(2) + 1;
+        if(escolhaAtaqueCriatura == 1){
+            System.out.println("-------------------------------------------");
+            System.out.println("A criatura inimiga te atacou fisicamente!");
+            criaturaInimiga.atacarFisicamente(jogador);
+            System.out.printf("A sua vida agora é: %d",jogador.getPontosVida());
+            System.out.println("\n-------------------------------------------\n");
+        }else if(escolhaAtaqueCriatura == 2){
+            System.out.println("-------------------------------------------");
+            System.out.println("A criatura inimiga te amaldiçoou!");
+            criaturaInimiga.atacarElementalmente(jogador);
+            System.out.printf("Sua vida agora é: %d", jogador.getPontosVida());
+            System.out.println("\n-------------------------------------------\n");
         }
     }
     public void iniciarBatalha(Criatura jogador, Criatura criaturaInimiga) {
@@ -31,43 +48,13 @@ public class Batalha {
         int vidaInicial = jogador.getPontosVida();
 
         if(jogador.getVelocidade() >= criaturaInimiga.getVelocidade()){
-            System.out.println("Você começa!");
+            System.out.println("\nVocê começa!");
             do{
-                System.out.println(jogador);
-                System.out.println(criaturaInimiga);
-                int escolhaAtaque = menu.menuAtacarBatalha();
-                System.out.println("Vida inicial: " + vidaInicial);
-                if(escolhaAtaque == 1){
-                    jogador.atacarFisicamente(criaturaInimiga);
-                    System.out.println("-------------------------------------------\n");
-                    System.out.printf("Você atacou fisicamente o %s\n",criaturaInimiga.getNome());
-                    System.out.println(jogador);
-                    System.out.println(criaturaInimiga);
-                    System.out.println("-------------------------------------------\n");
-                }else if(escolhaAtaque == 2){
-                    jogador.atacarElementalmente(criaturaInimiga);
-                    System.out.println("-------------------------------------------\n");
-                    System.out.printf("Você atacou elementalmente o %s\n",criaturaInimiga.getNome());
-                    System.out.println(jogador);
-                    System.out.println(criaturaInimiga);
-                    System.out.println("-------------------------------------------\n");
+                if(jogador.getPontosVida() > 0 && criaturaInimiga.getPontosVida()>0){
+                    atacarInimigo(jogador, criaturaInimiga);
+                    atacarJogador(jogador, criaturaInimiga);
                 }
-                int escolhaAtaqueCriatura = random.nextInt(1) + 1;
-                if(escolhaAtaqueCriatura == 1){
-                    criaturaInimiga.atacarFisicamente(jogador);
-                    System.out.println("-------------------------------------------\n");
-                    System.out.println("O inimigo usou o Ataque Físico");
-                    System.out.println(jogador);
-                    System.out.println(criaturaInimiga);
-                    System.out.println("-------------------------------------------\n");
-                }else if(escolhaAtaqueCriatura == 2){
-                    criaturaInimiga.atacarElementalmente(jogador);
-                    System.out.println("-------------------------------------------\n");
-                    System.out.println("O inimigo usou o Ataque Elemental");
-                    System.out.println(jogador);
-                    System.out.println(criaturaInimiga);
-                    System.out.println("-------------------------------------------\n");
-                }
+                
                 //------------------------------------------------------------
                 if (criaturaInimiga.getPontosVida() <= 0) {
                     System.out.println("A criatura inimiga foi derrotada!");
@@ -81,34 +68,10 @@ public class Batalha {
                 }
             }while (jogador.getPontosVida() > 0 || criaturaInimiga.getPontosVida() > 0);
         } else {
-            System.out.println("A criatura inimiga começa!");
+            System.out.println("\nA criatura inimiga começa!");
             do{
-                System.out.println(jogador);
-                System.out.println(criaturaInimiga);
-                int escolhaAtaqueCriatura = random.nextInt(1) + 1;
-                if(escolhaAtaqueCriatura == 1){
-                    criaturaInimiga.atacarFisicamente(jogador);
-                    System.out.println("-------------------------------------------\n");
-                    System.out.println("O inimigo usou o Ataque Físico");
-                    System.out.println(jogador);
-                    System.out.println(criaturaInimiga);
-                    System.out.println("-------------------------------------------\n");
-                }else if(escolhaAtaqueCriatura == 2){
-                    criaturaInimiga.atacarElementalmente(jogador);
-                    System.out.println("-------------------------------------------\n");
-                    System.out.println("O inimigo usou o Ataque Elemental");
-                    System.out.println(jogador);
-                    System.out.println(criaturaInimiga);
-                    System.out.println("-------------------------------------------\n");
-                }
-                int escolhaAtaque = menu.menuAtacarBatalha();
-                if(escolhaAtaque == 1){
-                    jogador.atacarFisicamente(criaturaInimiga);
-                    System.out.println(jogador);
-                    System.out.println(criaturaInimiga);
-                }else if(escolhaAtaque == 2){
-                    jogador.atacarElementalmente(criaturaInimiga);
-                }
+                atacarJogador(jogador, criaturaInimiga);
+                atacarInimigo(jogador, criaturaInimiga);
                 //------------------------------------------------------------
                 if (criaturaInimiga.getPontosVida() <= 0) {
                     System.out.println("A criatura inimiga foi derrotada!");

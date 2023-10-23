@@ -1,7 +1,9 @@
 public class BurnCoder extends Criatura{
     private int dano; 
     private int vidaAtual;
-    public BurnCoder() {
+
+    public BurnCoder(){
+
         this.setNome("BurnCoder");
         this.setFator(new double[]{1, 1, 2});
     }
@@ -17,6 +19,7 @@ public class BurnCoder extends Criatura{
             this.dano = (int) ((getPoder() * getAtaque()) / (getFator()[0] * alvo.getDefesa()));
             this.vidaAtual = alvo.getPontosVida() - dano;
             alvo.setPontosVida(vidaAtual);
+            System.out.println("O fogo queima como nunca!");
             System.out.println("Dano: " + dano);
         }
 
@@ -24,6 +27,7 @@ public class BurnCoder extends Criatura{
             this.dano = (int) ((getPoder() * getAtaque()) / (getFator()[1] * alvo.getDefesa()));
             this.vidaAtual = alvo.getPontosVida() - dano;
             alvo.setPontosVida(vidaAtual);
+            System.out.println("O fogo queima como nunca!");
              System.out.println("Dano: " + dano);
         }
 
@@ -31,9 +35,9 @@ public class BurnCoder extends Criatura{
             this.dano = (int) ((getPoder() * getAtaque()) / (getFator()[2] * alvo.getDefesa()));
             this.vidaAtual = alvo.getPontosVida() - dano;
             alvo.setPontosVida(vidaAtual);
+            System.out.println("O fogo queima como nunca!");
              System.out.println("Dano: " + dano);
         }
-
     }
 
     @Override
@@ -41,7 +45,7 @@ public class BurnCoder extends Criatura{
         this.dano = getPoder() * getAtaque() / alvo.getDefesa();
         int vidaAtual = alvo.getPontosVida() - dano;
         alvo.setPontosVida(vidaAtual);
-         System.out.println("Dano: " + dano);
+        System.out.println("Dano: " + dano);
     }
     
     // toString()

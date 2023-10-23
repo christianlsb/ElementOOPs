@@ -17,16 +17,18 @@ public class Main {
         criaturaEscolhida = menu.menuEscolherCriatura();
         //Interpreta a criatura escolhida.
         jogador = torneio.definirCriatura(criaturaEscolhida);
+        System.out.println(jogador);
         //Inicia o torneio.
         menu.menuIniciarTorneio();
         criaturasInimigas = torneio.separarInimigos(jogador);
-        System.out.println(jogador);
 
         for(Criatura criaturaInimiga:criaturasInimigas){
-
             batalha = new Batalha(jogador, criaturaInimiga);
-            menu.menuBatalhar(turno);
+            menu.menuBatalhar(turno, criaturaInimiga);
             batalha.iniciarBatalha(jogador,criaturaInimiga);
+            if(turno < 3){
+                menu.menuConfirmarBatalha();
+            }
             turno++;
             contadorBatalha++;
            if (contadorBatalha == 3){

@@ -5,7 +5,6 @@ public class WaveNerd extends Criatura {
     this.setFator(new double[]{1, 1, 2});
     this.setNome("WaveNerd");
   }
-
   
   @Override
   public void atacarElementalmente(Criatura alvo) {
@@ -43,6 +42,7 @@ public class WaveNerd extends Criatura {
     int dano = getPoder() * getAtaque() / alvo.getDefesa();
     int vidaAtual = alvo.getPontosVida() - dano;
     alvo.setPontosVida(vidaAtual);
+    System.out.println("Dano: " + dano);
 }
   @Override
   public String toString() {

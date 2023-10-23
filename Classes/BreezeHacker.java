@@ -43,6 +43,7 @@ public class BreezeHacker extends Criatura{
       int dano = getPoder() * getAtaque() / alvo.getDefesa();
       int vidaAtual = alvo.getPontosVida() - dano;
       alvo.setPontosVida(vidaAtual);
+      System.out.println("Dano: " + dano);
   }
     // toString()
     @Override
